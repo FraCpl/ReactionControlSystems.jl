@@ -22,3 +22,9 @@ function rcsMixMatrix(posRCS, dirRCS, forceRCS=ones(length(posRCS)), posRef=zero
     end
     return My
 end
+
+function rcsMixMatrix(posRCS::Matrix{T}, dirRCS::Matrix{T}, forceRCS=ones(T, size(posRCS, 1)), posRef=zeros(3)) where {T}
+    p = [pp for pp in eachrow(posRCS)]
+    d = [dd for dd in eachrow(dirRCS)]
+    return rcsMixMatrix(p, d, forceRCS, posRef)
+end
