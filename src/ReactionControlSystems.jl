@@ -1,5 +1,7 @@
 module ReactionControlSystems
 
+using LinearAlgebra
+
 export rcsMixMatrix
 include("mixMatrix.jl")
 
