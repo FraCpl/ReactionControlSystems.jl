@@ -1,0 +1,13 @@
+name = "ReactionControlSystems"
+uuid = "4f29ef0d-6a41-4d70-a1da-cafe9686e1a8"
+authors = ["F. Capolupo"]
+version = "0.1.0"
+
+[compat]
+julia = "1.12"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

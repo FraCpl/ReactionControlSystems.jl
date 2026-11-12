@@ -1,0 +1,6 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+ReactionControlSystems = "4f29ef0d-6a41-4d70-a1da-cafe9686e1a8"
+
+[sources]
+ReactionControlSystems = {path = ".."}
