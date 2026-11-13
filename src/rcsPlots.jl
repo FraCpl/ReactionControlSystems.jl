@@ -6,6 +6,12 @@ function plotRcs(posRCS, dirRCS; scale=1.0)
     return f, ax
 end
 
+function plotRcs!(ax, posRCS::Matrix{T}, dirRCS::Matrix{T}; scale=1.0) where {T}
+    pos = [p for p in eachrow(posRCS)]
+    dir = [d for d in eachrow(dirRCS)]
+    return plotRcs!(ax, pos, dir; scale=scale)
+end
+
 function plotRcs!(ax, posRCS, dirRCS; scale=1.0)
     plotRcsCore!.(ax, posRCS, -dirRCS; height=scale)
     for i in eachindex(posRCS)
