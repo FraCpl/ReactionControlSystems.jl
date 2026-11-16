@@ -62,9 +62,7 @@ end
 
 function rcsAllocationSimplex!(r::RcsAllocator, u)
     r.y .= 0.0
-    if iszero(u)
-        return nothing
-    end
+    all(iszero, u) && return nothing
 
     # Aliases
     m = r.m             # Number of dof (output size)
