@@ -15,6 +15,7 @@ Quats = "faa667c8-0f2e-4834-a931-554d4b02f32e"
 Quats = {rev = "master", url = "https://github.com/FraCpl/Quats.jl"}
 
 [compat]
+GLMakie = "0.13.17"
 Quats = "0.1.0"
 
 [extras]
