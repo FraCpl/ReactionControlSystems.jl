@@ -24,13 +24,15 @@ end
 # See plotCone! in JTools
 function plotRcsCore!(ax, posTip=zeros(3), dirAxis=[0.0; 0.0; 1.0]; height=1.0, fullAngle=40π/180, kwargs...)
     N = 200
-    z = normalize(dirAxis)
+    z = normalize(collect(dirAxis))
     x = normalize(randn(3) × z)
     y = z × x
-    R = [x y z]
+    R = Matrix3x3([x y z])
+    # R = Matrix3x3(q_toDcm(Quats.q_fromZaxis(z)))
     r = height*tan(fullAngle/2)
-    circ = Ref(posTip) .+ Ref(R) .* [[r*sin(θ); r*cos(θ); height] for θ in range(0, 2π, N)]
-    lower = fill(Point3f(posTip[1], posTip[2], posTip[3]), N)
+    pt = Vector3(posTip)
+    circ = [pt + R*(r*sin(θ), r*cos(θ), height) for θ in range(0, 2π, N)]
+    lower = fill(Point3f(pt[1], pt[2], pt[3]), N)
     upper = [Point3f(c[1], c[2], c[3]) for c in circ]
     band!(ax, lower, upper; kwargs...)
     lines!(ax, upper; color=:black)

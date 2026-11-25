@@ -18,7 +18,9 @@ function rcsMixMatrix(posRCS, dirRCS, forceRCS=ones(length(posRCS)), posRef=zero
         frc = forceRCS
     end
     for i in 1:n
-        My[:, i] = frc[i]*[dir[i]; pos[i] × dir[i]]
+        x, y, z = frc[i] * dir[i]
+        a, b, c = frc[i] * (pos[i] × dir[i])
+        My[:, i] = [x, y, z, a, b, c]
     end
     return My
 end

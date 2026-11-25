@@ -9,6 +9,13 @@ ECOS = "e2685f51-7e38-5353-a97d-a921fd2c8199"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 GeometryBasics = "5c1252a2-5f33-56bf-86c9-59e7332b4326"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Quats = "faa667c8-0f2e-4834-a931-554d4b02f32e"
+
+[sources]
+Quats = {rev = "master", url = "https://github.com/FraCpl/Quats.jl"}
+
+[compat]
+Quats = "0.1.0"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

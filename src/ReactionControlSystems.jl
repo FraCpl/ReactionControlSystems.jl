@@ -5,6 +5,7 @@ using GLMakie
 using Convex
 using ECOS
 using GeometryBasics
+using Quats
 
 export rcsMixMatrix
 include("mixMatrix.jl")
